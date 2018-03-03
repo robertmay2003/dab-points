@@ -91,7 +91,7 @@ def printHelp():
     ["|"] + [" "]*9 + ["^"] + [" "]*10 + ["|"],
     ["|"] + [" "]*9 + ["w"] + [" "]*10 + ["|"],
     ["|"] + [" "]*7 + ["<a"] + [" "] + ["d>"] + [" "]*8 + ["|"],
-    ["|"] + [" "]*9 + ["d"] + [" "]*10 + ["|"],
+    ["|"] + [" "]*9 + ["s"] + [" "]*10 + ["|"],
     ["|"] + [" "]*9 + ["v"] + [" "]*10 + ["|"],
     ["|"] + [" "]*5 + ["POWER UPS:"] + [" "]*5 + ["|"],
     ["|"] + [" "]*2 + ["\033[0;35;42m\033[0m = High Points"] + [" "]*3 + ["|"],
@@ -514,7 +514,7 @@ def main():
         click = os.spawnlp(os.P_NOWAIT, "/usr/bin/afplay", "afplay", "./audio/sfx/menu/click.mp3")
         if action == 'h':
             printHelp()
-            raw_input("Press any key to return.")
+            raw_input("Press [ENTER] to return.")
             click = os.spawnlp(os.P_NOWAIT, "/usr/bin/afplay", "afplay", "./audio/sfx/menu/click.mp3")
         elif action == 'p':
             os.system("kill %s;kill \"$(cat /tmp/cu-song.pid)\"" % (menu))
