@@ -501,6 +501,11 @@ def play():
         playing = (raw_input("One more round? [y/n]: ").lower()+";")[0]
 
 def main():
+    try:
+        file = open('leaderboard.txt', 'r')
+        file.close()
+    except IOError:
+        file = os.system("touch leaderboard.txt")
     menu = os.spawnlp(os.P_NOWAIT, "./audioPlayer.sh", "afplay", "./audio/menu/%s"%(choice([x for x in os.listdir("./audio/menu/")])))
     home = True
     while home:
